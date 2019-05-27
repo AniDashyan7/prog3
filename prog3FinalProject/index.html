@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="p5.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script> 
+    <style>
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        div {
+            display: inline-block;
+        }
+        h1 {
+            padding: 20px;
+            text-align: center;
+        }
+        body {
+            font-family: 'Noto Sans', sans-serif !important;
+        }
+
+        div {
+            width: 200px;
+            background-color: #40e0d0;
+            text-align: center;
+            color: white;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <h1>Ծրագրավորում III Երևան</h1>
+            </tr>
+            <tr>
+                <h1>Անի Դաշյան</h1>
+            </tr>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Գույն</th>
+                <th scope="col">Նկարագրություն</th>
+                <th scope="col">Ծնվել է</th>
+                <th scope="col">Եղանակ</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+                <th scope="row">1</th>
+                <td scope="row" style="background-color:green;"></td>
+                <td>Կանաչը խոտն է, որը բազմանում է 4 ցիկլը մեկ՝ մոտակա 8 վանդակներում,մահանում է երբ նրան ուտում է խոտակերը, կամ 4-րդ կերպարը։</td>
+                <td id="grassCount"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td scope="row" style="background-color:orange;"></td>
+                <td>Նարնջագույնը խոտակերն է, որը շարժվում է մոտակա 8 վանդակներում, էներգիան քչանում է 1֊ով,ուտում է խոտերին,բազմանում է մոտակա տարածքներում երբ էներգիան 10-ից ավել է,
+                  մահանում է  երբ նրան ուտում է գիշատիչը կամ 4-րդ կերպարը կամ էներգիան փոքր է 0֊ից:</td>
+                <td id="grassEaterCount"></td>
+            </tr>
+
+            <tr>
+                <th scope="row">3</th>
+                <td scope="row" style="background-color:red;"></td>
+                <td>Կարմիրըը գիշատիչն  է, որը շարժվում է մոտակա 8 վանդակներում, էներգիան քչանում է 2֊ով,ուտում է խոտակերներին,բազմանում է մոտակա տարածքներում երբ էներգիան 15-ից ավել է,
+                մահանում է երբ 5-րդ կերպարը կամ երբ էներգիան փոքր է 0֊ից:</td>
+                <td id="predatorCount"></td>
+            </tr>
+
+            <tr>
+                <th scope="row">4</th>
+                <td scope="row" style="background-color:blue;"></td>
+                <td>Կապույտը 4-րդ կերպարն է, որը շարժվում է մոտակա 16 վանդակներում, էներգիան քչանում է 4֊ով, ուտում է գիշատիչներին,բազմանում է մոտակա տարածքներում, երբ էներգիան 20֊ից ավել է,
+                    մահանում է երբ էներգիան փոքր է 0֊ից:</td>
+                <td id="character4Count"></td>
+            </tr>
+
+            <tr>
+                <th scope="row">5</th>
+                <td scope="row" style="background-color:yellow;"></td> 
+                <td>Դեղինը 5-րդ կերպարն է, որը շարժվում է մոտակա 8 վանդակներում, էներգիան քչանում է 6֊ով, ուտում է 4-րդ կերպարն,բազմանում է մոտակա տարածքներում, երբ էներգիան 25֊ից ավել է,
+                    մահանում է երբ էներգիան փոքր է 0֊ից:</td>
+                <td id="character5Count"></td>
+            </tr>
+
+            <tr>
+                <th scope="row">6</th>
+                <td scope="row" style="background-color: pink;"></td> 
+                <td>Վարդագույնը եղանակն է,այստեղ աշունը։ Աշնանը  5-րդ կերպարը մահանում է։</td>
+                <td></td>
+                <td id="weather"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
